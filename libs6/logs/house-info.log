@@ -1,0 +1,55 @@
+2020-08-24 21:16:56.744 [main] INFO  [com.mooc.house.hsrv.HouseSrvApplication:651] [,] - No active profile set, falling back to default profiles: default
+2020-08-24 21:16:57.368 [main] INFO  [org.springframework.cloud.context.scope.GenericScope:295] [,] - BeanFactory id=e14741cf-e08d-371d-884a-37872afbd0b1
+2020-08-24 21:16:57.867 [main] INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:108] [,] - Tomcat initialized with port(s): 8084 (http)
+2020-08-24 21:16:57.874 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol:173] [,] - Initializing ProtocolHandler ["http-nio-8084"]
+2020-08-24 21:16:57.875 [main] INFO  [org.apache.catalina.core.StandardService:173] [,] - Starting service [Tomcat]
+2020-08-24 21:16:57.875 [main] INFO  [org.apache.catalina.core.StandardEngine:173] [,] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-24 21:16:58.046 [main] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] [,] - Initializing Spring embedded WebApplicationContext
+2020-08-24 21:16:58.051 [main] INFO  [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:285] [,] - Root WebApplicationContext: initialization completed in 1289 ms
+2020-08-24 21:16:58.523 [main] WARN  [org.springframework.cloud.sleuth.zipkin2.ZipkinAutoConfiguration:111] [,] - Check result of the [RestTemplateSender{http://47.103.192.187:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://47.103.192.187:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-08-24 21:16:58.951 [main] INFO  [com.alibaba.druid.pool.DruidDataSource:983] [,] - {dataSource-1} inited
+2020-08-24 21:16:59.406 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:181] [,] - Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 21:16:59.798 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol:173] [,] - Starting ProtocolHandler ["http-nio-8084"]
+2020-08-24 21:16:59.819 [main] INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:220] [,] - Tomcat started on port(s): 8084 (http) with context path ''
+2020-08-24 21:16:59.838 [main] INFO  [com.mooc.house.hsrv.HouseSrvApplication:61] [,] - Started HouseSrvApplication in 23.883 seconds (JVM running for 29.871)
+2020-08-24 21:17:44.046 [http-nio-8084-exec-1] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] [,] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-24 21:17:44.047 [http-nio-8084-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet:525] [,] - Initializing Servlet 'dispatcherServlet'
+2020-08-24 21:17:44.057 [http-nio-8084-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet:547] [,] - Completed initialization in 10 ms
+2020-08-24 21:17:45.935 [AsyncReporter{RestTemplateSender{http://47.103.192.187:9411/api/v2/spans}}] WARN  [zipkin2.reporter.AsyncReporter$BoundedAsyncReporter:310] [,] - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-08-24 21:17:45.936 [AsyncReporter{RestTemplateSender{http://47.103.192.187:9411/api/v2/spans}}] WARN  [zipkin2.reporter.AsyncReporter$BoundedAsyncReporter:317] [,] - Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://47.103.192.187:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused))
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://47.103.192.187:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:228) ~[spring-cloud-sleuth-zipkin-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:147) ~[spring-cloud-sleuth-zipkin-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:137) ~[spring-cloud-sleuth-zipkin-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.21.1.jar:?]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299) ~[zipkin-reporter-2.15.0.jar:?]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378) ~[zipkin-reporter-2.15.0.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_212-release]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_212-release]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_212-release]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_212-release]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_212-release]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_212-release]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_212-release]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175) ~[?:1.8.0_212-release]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[?:1.8.0_212-release]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[?:1.8.0_212-release]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[?:1.8.0_212-release]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[?:1.8.0_212-release]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[?:1.8.0_212-release]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220) ~[?:1.8.0_212-release]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156) ~[?:1.8.0_212-release]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050) ~[?:1.8.0_212-release]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984) ~[?:1.8.0_212-release]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	... 9 more
+2020-08-24 21:17:57.383 [SpringContextShutdownHook] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:218] [,] - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 21:17:57.384 [SpringContextShutdownHook] INFO  [com.alibaba.druid.pool.DruidDataSource:2024] [,] - {dataSource-1} closing ...
+2020-08-24 21:17:57.387 [SpringContextShutdownHook] INFO  [com.alibaba.druid.pool.DruidDataSource:2096] [,] - {dataSource-1} closed

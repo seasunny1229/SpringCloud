@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mooc.house.hsrv.mapper.HouseMsgMapper">
+
+    <insert id="insertUserMsg" useGeneratedKeys="true" keyProperty="id">
+        insert into house_msg(
+        msg,
+        create_time,
+        agent_id,
+        house_id,
+        user_name)
+        value(
+        #{message.msg},
+        #{message.createTime},
+        #{message.agentId},
+        #{message.houseId},
+        #{message.userName}
+        )
+    </insert>
+
+</mapper>

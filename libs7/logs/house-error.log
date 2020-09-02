@@ -1,0 +1,28 @@
+2020-09-02 23:02:37.132 [main] ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:40] [,,] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8085 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
+
+2020-09-02 23:04:51.288 [main] ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:40] [,,] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8085 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
+

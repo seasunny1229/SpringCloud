@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mooc.house.user.mapper.AgencyMapper">
+
+    <sql id="agencyField">
+        id,
+        name,
+        address,
+        phone,
+        email,
+        about_us,
+        web_site,
+        mobile
+    </sql>
+    
+    <sql id="agencyCondition">
+        <where>
+            <if test="email != null">
+                and email = #{email}
+            </if>
+        </where>
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into agency(
+        name,
+        address,
+        email,
+        phone,
+        about_us,
+        web_site,
+        mobile
+        )
+        values
+        (
+        #{name},
+        #{address},
+        #{email},
+        #{phone},
+        #{aboutUs},
+        #{webSite},
+        #{mobile}
+        )
+    </insert>
+
+    <select id="select" resultType="agency">
+        select
+        <include refid="agencyField"/>
+        from agency
+        <include refid="agencyCondition"/>
+    </select>
+
+
+</mapper>

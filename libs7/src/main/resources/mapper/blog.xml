@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mooc.house.comment.mapper.BlogMapper">
+
+    <sql id="blogField">
+        id,tags,content,title,create_time,cat
+    </sql>
+    
+    <sql id="blogCondition">
+        <where>
+            <if test="blog.id != null and blog.id !=0">
+                and id = #{blog.id}
+            </if>
+        </where>
+        order by create_time desc
+        <if test="pageParams.limit != null and pageParams.offset != null">
+            limit #{pageParams.offset}, #{pageParams.limit}
+        </if>
+        <if test="pageParams.offset == null and pageParams.limit != null">
+            limit #{pageParams.limit}
+        </if>
+    </sql>
+
+    <select id="selectBlog" resultType="blog">
+        select
+        <include refid="blogField"/>
+        from blog
+        <include refid="blogCondition"/>
+    </select>
+
+    <select id="getNumberBlog" resultType="java.lang.Long">
+        select count(id) from blog
+    </select>
+
+</mapper>

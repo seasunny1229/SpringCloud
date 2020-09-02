@@ -1,0 +1,57 @@
+2020-09-02 23:00:00.183 [main] WARN  [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger:86] [,] - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-09-02 23:00:01.628 [main] WARN  [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:559] [,] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8085 is already in use
+2020-09-02 23:00:02.670 [main] WARN  [zipkin2.reporter.AsyncReporter$BoundedAsyncReporter:342] [,] - Timed out waiting for in-flight spans to send
+2020-09-02 23:00:05.724 [main] ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:40] [,] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8085 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
+
+2020-09-02 23:02:29.753 [main] WARN  [org.springframework.cloud.sleuth.zipkin2.ZipkinAutoConfiguration:111] [,] - Check result of the [RestTemplateSender{http://47.103.192.187:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://47.103.192.187:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-09-02 23:02:30.750 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] [,] - No URLs will be polled as dynamic configuration sources.
+2020-09-02 23:02:30.756 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] [,] - No URLs will be polled as dynamic configuration sources.
+2020-09-02 23:02:31.706 [main] WARN  [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger:86] [,] - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-09-02 23:02:33.060 [main] WARN  [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:559] [,] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8085 is already in use
+2020-09-02 23:02:34.087 [main] WARN  [zipkin2.reporter.AsyncReporter$BoundedAsyncReporter:342] [,] - Timed out waiting for in-flight spans to send
+2020-09-02 23:02:37.132 [main] ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:40] [,] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8085 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
+
+2020-09-02 23:04:43.350 [main] WARN  [org.springframework.cloud.sleuth.zipkin2.ZipkinAutoConfiguration:111] [,] - Check result of the [RestTemplateSender{http://47.103.192.187:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://47.103.192.187:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-09-02 23:04:44.508 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] [,] - No URLs will be polled as dynamic configuration sources.
+2020-09-02 23:04:44.514 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] [,] - No URLs will be polled as dynamic configuration sources.
+2020-09-02 23:04:45.450 [main] WARN  [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger:86] [,] - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-09-02 23:04:47.193 [main] WARN  [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:559] [,] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8085 is already in use
+2020-09-02 23:04:48.230 [main] WARN  [zipkin2.reporter.AsyncReporter$BoundedAsyncReporter:342] [,] - Timed out waiting for in-flight spans to send
+2020-09-02 23:04:51.288 [main] ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:40] [,] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8085 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
+

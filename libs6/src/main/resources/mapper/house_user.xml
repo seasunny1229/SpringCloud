@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mooc.house.hsrv.mapper.HouseUserMapper">
+
+    <sql id="houseUserField">
+        id,
+        house_id,
+        user_id,
+        create_time,
+        type
+    </sql>
+
+    <sql id="houseUserCondition">
+        where
+        house_id = #{house_id} and
+        user_id = #{user_id} and
+        type = #{type}
+    </sql>
+
+    <sql id="houseUserConditionByHouseId">
+        where
+        house_id = #{house_id} and
+        type = #{type}
+    </sql>
+
+    <insert id="insertHouseUser" useGeneratedKeys="true" keyProperty="id">
+        insert into house_user(
+        house_id,
+        user_id,
+        create_time,
+        type
+        )
+        values
+        (
+        #{house_user.houseId},
+        #{house_user.userId},
+        #{house_user.createTime},
+        #{house_user.type}
+        )
+    </insert>
+
+    <delete id="deleteHouseUser">
+        delete from house_user
+        <include refid="houseUserCondition"/>
+    </delete>
+
+    <select id="selectHouseUsers" resultType="houseUser">
+        select
+        <include refid="houseUserField"/>
+        from house_user
+        <include refid="houseUserCondition"/>
+    </select>
+
+    <select id="selectHouseUsersByHouseId" resultType="houseUser">
+        select
+        <include refid="houseUserField"/>
+        from house_user
+        <include refid="houseUserConditionByHouseId"/>
+    </select>
+
+</mapper>

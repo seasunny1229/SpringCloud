@@ -1,0 +1,19 @@
+2020-09-02 22:59:55.400 [main] INFO  [com.mooc.house.comment.CommentSrvApplication:651] [,] - No active profile set, falling back to default profiles: default
+2020-09-02 22:59:56.239 [main] INFO  [org.springframework.data.repository.config.RepositoryConfigurationDelegate:249] [,] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-02 22:59:56.242 [main] INFO  [org.springframework.data.repository.config.RepositoryConfigurationDelegate:127] [,] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-09-02 22:59:56.270 [main] INFO  [org.springframework.data.repository.config.RepositoryConfigurationDelegate:187] [,] - Finished Spring Data repository scanning in 9ms. Found 0 Redis repository interfaces.
+2020-09-02 22:59:56.678 [main] INFO  [org.springframework.cloud.context.scope.GenericScope:295] [,] - BeanFactory id=99d652cc-2139-3f35-b672-bb3dd6d3f82e
+2020-09-02 22:59:57.217 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:335] [,] - Bean 'spring.sleuth.redis-org.springframework.cloud.sleuth.instrument.redis.TraceRedisProperties' of type [org.springframework.cloud.sleuth.instrument.redis.TraceRedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-02 22:59:57.533 [main] INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:108] [,] - Tomcat initialized with port(s): 8085 (http)
+2020-09-02 22:59:57.545 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol:173] [,] - Initializing ProtocolHandler ["http-nio-8085"]
+2020-09-02 22:59:57.545 [main] INFO  [org.apache.catalina.core.StandardService:173] [,] - Starting service [Tomcat]
+2020-09-02 22:59:57.546 [main] INFO  [org.apache.catalina.core.StandardEngine:173] [,] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-02 22:59:57.646 [main] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] [,] - Initializing Spring embedded WebApplicationContext
+2020-09-02 22:59:57.646 [main] INFO  [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:285] [,] - Root WebApplicationContext: initialization completed in 2217 ms
+2020-09-02 22:59:58.146 [main] WARN  [org.springframework.cloud.sleuth.zipkin2.ZipkinAutoConfiguration:111] [,] - Check result of the [RestTemplateSender{http://47.103.192.187:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://47.103.192.187:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-09-02 22:59:58.546 [main] INFO  [com.alibaba.druid.pool.DruidDataSource:983] [,] - {dataSource-1} inited
+2020-09-02 22:59:59.243 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] [,] - No URLs will be polled as dynamic configuration sources.
+2020-09-02 22:59:59.243 [main] INFO  [com.netflix.config.sources.URLConfigurationSource:122] [,] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-09-02 22:59:59.249 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] [,] - No URLs will be polled as dynamic configuration sources.
+2020-09-02 22:59:59.249 [main] INFO  [com.netflix.config.sources.URLConfigurationSource:122] [,] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-09-02 22:59:59.555 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:181] [,] - Initializing ExecutorService 'applicationTaskExecutor'

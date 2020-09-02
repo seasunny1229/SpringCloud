@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mooc.house.hsrv.mapper.HouseMapper">
+
+    <sql id="houseField">
+        id ,
+        type,
+        name,
+        price,
+        images,
+        area,
+        beds,
+        baths,
+        rating,
+        remarks,
+        properties,
+        floor_plan,
+        tags,
+        create_time,
+        city_id,
+        community_id,
+        address,
+        state
+    </sql>
+
+    <sql id="houseCondition">
+        <where>
+            state = 1
+            <if test="house.id != null and house.id !=0">
+                and id = #{house.id}
+            </if>
+            <if test="house.type != null and house.type !=''">
+                and type = #{house.type}
+            </if>
+            <if test="house.cityId != null and house.cityId !=''">
+                and city_id = #{house.cityId}
+            </if>
+            <if test="house.communityId != null and house.communityId !=''">
+                and community_id = #{house.communityId}
+            </if>
+            <if test="house.name != null and house.name !=''">
+                <bind name="pattern_house_name" value="'%' + house.name + '%'"/>
+                and name like #{pattern_house_name}
+            </if>
+            <if test="house.ids != null and house.ids.size() >0 ">
+                and id in
+                <foreach collection="house.ids" item="item" index="index" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="houseUpdate">
+        <set>
+            <if test="house.rating != null and house.rating != 0">
+                rating = #{house.rating}
+            </if>
+            <if test="house.state != null and house.state != 0">
+                rating = #{house.state}
+            </if>
+        </set>
+    </sql>
+
+    <select id="selectHouses" resultType="house">
+        select 
+        <include refid="houseField"/>
+        from house
+        <where>
+            <if test="id != null and id !=0">
+                and id = #{id}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectHouseByLimit"  resultType="house" >
+        select
+        <include refid="houseField" />
+        from house
+        <choose>
+            <when test="order != null and order == 'price_asc'">
+            order by price asc
+            </when>
+            <when test="order != null and order == 'price_desc'">
+            order by price desc
+            </when>
+            <otherwise>
+                order by create_time desc
+            </otherwise>
+        </choose>
+        <if test="pageParams.limit != null and pageParams.offset != null">
+            limit #{pageParams.offset}, #{pageParams.limit}
+        </if>
+        <if test="pageParams.offset == null and pageParams.limit != null">
+            limit #{pageParams.limit}
+        </if>
+    </select>
+
+    <select id="getNumberHouses" resultType="java.lang.Long">
+        select count(id) from house
+        <include refid="houseCondition"/>
+    </select>
+
+    <update id="updateHouse">
+        update house
+        <include refid="houseUpdate"/>
+        where id = #{house.id}
+    </update>
+
+</mapper>

@@ -11,6 +11,8 @@ dependencyManagement {
 
 dependencies {
 
+    implementation project(":libs-test")
+
     // spring web
     implementation "org.springframework.boot:spring-boot-starter-web"
 

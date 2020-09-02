@@ -1,0 +1,33 @@
+apply plugin: 'java-library'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+    imports {
+        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR7'
+    }
+}
+
+dependencies {
+
+
+    // web
+    implementation "org.springframework.boot:spring-boot-starter-web"
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+bootJar{
+    baseName = 'libs-test-boot'
+    enabled = true
+}
+
+jar{
+    baseName = 'libs-test'
+    enabled = true
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

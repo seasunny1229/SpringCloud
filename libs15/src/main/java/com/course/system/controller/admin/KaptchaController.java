@@ -5,7 +5,7 @@ import com.google.code.kaptcha.impl.DefaultKaptcha;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +15,6 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.util.concurrent.TimeUnit;
 
-import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -27,8 +26,8 @@ public class KaptchaController {
 
     public static final String BUSINESS_NAME = "图片验证码";
 
-    @Resource
-    public RedisTemplate redisTemplate;
+    @Autowired
+    public StringRedisTemplate stringRedisTemplate;
 
 
     @Qualifier("getDefaultKaptcha")
@@ -51,7 +50,7 @@ public class KaptchaController {
 
             // save cache (session or redis)
             // request.getSession().setAttribute(imageCodeToken, createText);
-            redisTemplate.opsForValue().set(imageCodeToken, createText, 300, TimeUnit.SECONDS);
+            stringRedisTemplate.opsForValue().set(imageCodeToken, createText, 300, TimeUnit.SECONDS);
 
             // generate image
             BufferedImage challenge = defaultKaptcha.createImage(createText);

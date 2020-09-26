@@ -198,3 +198,76 @@ Action:
 
 Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
 
+2020-09-02 23:31:26.432 [main] INFO  [com.mooc.house.comment.CommentSrvApplication:651] [,] - No active profile set, falling back to default profiles: default
+2020-09-02 23:31:27.242 [main] INFO  [org.springframework.data.repository.config.RepositoryConfigurationDelegate:249] [,] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-02 23:31:27.245 [main] INFO  [org.springframework.data.repository.config.RepositoryConfigurationDelegate:127] [,] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-09-02 23:31:27.288 [main] INFO  [org.springframework.data.repository.config.RepositoryConfigurationDelegate:187] [,] - Finished Spring Data repository scanning in 18ms. Found 0 Redis repository interfaces.
+2020-09-02 23:31:27.748 [main] INFO  [org.springframework.cloud.context.scope.GenericScope:295] [,] - BeanFactory id=99d652cc-2139-3f35-b672-bb3dd6d3f82e
+2020-09-02 23:31:28.222 [main] INFO  [org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:335] [,] - Bean 'spring.sleuth.redis-org.springframework.cloud.sleuth.instrument.redis.TraceRedisProperties' of type [org.springframework.cloud.sleuth.instrument.redis.TraceRedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-02 23:31:28.491 [main] INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:108] [,] - Tomcat initialized with port(s): 8085 (http)
+2020-09-02 23:31:28.502 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol:173] [,] - Initializing ProtocolHandler ["http-nio-8085"]
+2020-09-02 23:31:28.503 [main] INFO  [org.apache.catalina.core.StandardService:173] [,] - Starting service [Tomcat]
+2020-09-02 23:31:28.503 [main] INFO  [org.apache.catalina.core.StandardEngine:173] [,] - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-02 23:31:28.611 [main] INFO  [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] [,] - Initializing Spring embedded WebApplicationContext
+2020-09-02 23:31:28.611 [main] INFO  [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:285] [,] - Root WebApplicationContext: initialization completed in 2157 ms
+2020-09-02 23:31:28.931 [main] WARN  [org.springframework.cloud.sleuth.zipkin2.ZipkinAutoConfiguration:111] [,] - Check result of the [RestTemplateSender{http://47.103.192.187:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://47.103.192.187:9411/api/v2/spans": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)}]
+2020-09-02 23:31:29.307 [main] INFO  [com.alibaba.druid.pool.DruidDataSource:983] [,] - {dataSource-1} inited
+2020-09-02 23:31:29.924 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] [,] - No URLs will be polled as dynamic configuration sources.
+2020-09-02 23:31:29.924 [main] INFO  [com.netflix.config.sources.URLConfigurationSource:122] [,] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-09-02 23:31:29.928 [main] WARN  [com.netflix.config.sources.URLConfigurationSource:121] [,] - No URLs will be polled as dynamic configuration sources.
+2020-09-02 23:31:29.928 [main] INFO  [com.netflix.config.sources.URLConfigurationSource:122] [,] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-09-02 23:31:30.208 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:181] [,] - Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-02 23:31:30.907 [main] WARN  [org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger:86] [,] - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-09-02 23:31:31.137 [main] INFO  [org.springframework.cloud.netflix.eureka.InstanceInfoFactory:72] [,] - Setting initial instance status as: STARTING
+2020-09-02 23:31:31.172 [main] INFO  [com.netflix.discovery.DiscoveryClient:371] [,] - Initializing Eureka in region us-east-1
+2020-09-02 23:31:31.315 [main] INFO  [com.netflix.discovery.provider.DiscoveryJerseyProvider:70] [,] - Using JSON encoding codec LegacyJacksonJson
+2020-09-02 23:31:31.315 [main] INFO  [com.netflix.discovery.provider.DiscoveryJerseyProvider:71] [,] - Using JSON decoding codec LegacyJacksonJson
+2020-09-02 23:31:31.427 [main] INFO  [com.netflix.discovery.provider.DiscoveryJerseyProvider:80] [,] - Using XML encoding codec XStreamXml
+2020-09-02 23:31:31.427 [main] INFO  [com.netflix.discovery.provider.DiscoveryJerseyProvider:81] [,] - Using XML decoding codec XStreamXml
+2020-09-02 23:31:32.007 [main] INFO  [com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver:43] [,] - Resolving eureka endpoints via configuration
+2020-09-02 23:31:32.022 [main] INFO  [com.netflix.discovery.DiscoveryClient:1004] [,] - Disable delta property : false
+2020-09-02 23:31:32.022 [main] INFO  [com.netflix.discovery.DiscoveryClient:1005] [,] - Single vip registry refresh property : null
+2020-09-02 23:31:32.023 [main] INFO  [com.netflix.discovery.DiscoveryClient:1006] [,] - Force full registry fetch : false
+2020-09-02 23:31:32.023 [main] INFO  [com.netflix.discovery.DiscoveryClient:1007] [,] - Application is null : false
+2020-09-02 23:31:32.023 [main] INFO  [com.netflix.discovery.DiscoveryClient:1008] [,] - Registered Applications size is zero : true
+2020-09-02 23:31:32.023 [main] INFO  [com.netflix.discovery.DiscoveryClient:1010] [,] - Application version is -1: true
+2020-09-02 23:31:32.024 [main] INFO  [com.netflix.discovery.DiscoveryClient:1093] [,] - Getting all instance registry info from the eureka server
+2020-09-02 23:31:32.184 [main] INFO  [com.netflix.discovery.DiscoveryClient:1102] [,] - The response status is 200
+2020-09-02 23:31:32.187 [main] INFO  [com.netflix.discovery.DiscoveryClient:1317] [,] - Starting heartbeat executor: renew interval is: 5
+2020-09-02 23:31:32.189 [main] INFO  [com.netflix.discovery.InstanceInfoReplicator:60] [,] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-09-02 23:31:32.193 [main] INFO  [com.netflix.discovery.DiscoveryClient:491] [,] - Discovery Client initialized at timestamp 1599060692192 with initial instances count: 4
+2020-09-02 23:31:32.202 [main] INFO  [org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry:41] [,] - Registering application COMMENT with eureka with status UP
+2020-09-02 23:31:32.202 [main] INFO  [com.netflix.discovery.DiscoveryClient:1353] [,] - Saw local status change event StatusChangeEvent [timestamp=1599060692202, current=UP, previous=STARTING]
+2020-09-02 23:31:32.204 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient:870] [,] - DiscoveryClient_COMMENT/cuitingdembp:comment:8085: registering service...
+2020-09-02 23:31:32.206 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol:173] [,] - Starting ProtocolHandler ["http-nio-8085"]
+2020-09-02 23:31:32.229 [main] WARN  [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:559] [,] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8085 is already in use
+2020-09-02 23:31:32.239 [main] INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:218] [,] - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-02 23:31:32.265 [DiscoveryClient-InstanceInfoReplicator-0] INFO  [com.netflix.discovery.DiscoveryClient:879] [,] - DiscoveryClient_COMMENT/cuitingdembp:comment:8085 - registration status: 204
+2020-09-02 23:31:32.275 [main] INFO  [com.alibaba.druid.pool.DruidDataSource:2024] [,] - {dataSource-1} closing ...
+2020-09-02 23:31:32.276 [main] INFO  [com.alibaba.druid.pool.DruidDataSource:2096] [,] - {dataSource-1} closed
+2020-09-02 23:31:33.278 [main] WARN  [zipkin2.reporter.AsyncReporter$BoundedAsyncReporter:342] [,] - Timed out waiting for in-flight spans to send
+2020-09-02 23:31:33.279 [main] INFO  [com.netflix.discovery.DiscoveryClient:932] [,] - Shutting down DiscoveryClient ...
+2020-09-02 23:31:36.285 [main] INFO  [com.netflix.discovery.DiscoveryClient:968] [,] - Unregistering ...
+2020-09-02 23:31:36.290 [main] INFO  [com.netflix.discovery.DiscoveryClient:970] [,] - DiscoveryClient_COMMENT/cuitingdembp:comment:8085 - deregister  status: 200
+2020-09-02 23:31:36.302 [main] INFO  [com.netflix.discovery.DiscoveryClient:957] [,] - Completed shut down of DiscoveryClient
+2020-09-02 23:31:36.303 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol:173] [,] - Pausing ProtocolHandler ["http-nio-8085"]
+2020-09-02 23:31:36.303 [main] INFO  [org.apache.catalina.core.StandardService:173] [,] - Stopping service [Tomcat]
+2020-09-02 23:31:36.307 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol:173] [,] - Stopping ProtocolHandler ["http-nio-8085"]
+2020-09-02 23:31:36.307 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol:173] [,] - Destroying ProtocolHandler ["http-nio-8085"]
+2020-09-02 23:31:36.317 [main] INFO  [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:136] [,] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-09-02 23:31:36.326 [main] ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:40] [,] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8085 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
+

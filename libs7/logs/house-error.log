@@ -26,3 +26,17 @@ Action:
 
 Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
 
+2020-09-02 23:31:36.326 [main] ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:40] [,,] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8085 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
+

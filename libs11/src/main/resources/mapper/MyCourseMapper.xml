@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.course.server.mapper.my.MyCourseMapper" >
+<mapper namespace="com.course.business.mapper.MyCourseMapper" >
 
     <!-- web端【全部课程】页面，查询课程列表 -->
-    <select id="list" resultType="com.course.server.dto.CourseDto">
+    <select id="list" resultType="com.course.business.dto.CourseDto">
         select c.id, c.name, c.summary, time, price, image, level,
                charge, status, enroll, sort, created_at as createdAt,
                updated_at as updatedAt, teacher_id as teacherId
@@ -27,17 +27,17 @@
         where c.id = #{courseId}
     </update>
 
-    <update id="updateSort" parameterType="com.course.server.dto.SortDto">
+    <update id="updateSort" parameterType="com.course.business.dto.SortDto">
         update course set `sort`= #{newSort} where id = #{id}
     </update>
 
-    <update id="moveSortsBackward" parameterType="com.course.server.dto.SortDto">
+    <update id="moveSortsBackward" parameterType="com.course.business.dto.SortDto">
         <![CDATA[
         update course set `sort`= (`sort`+1) where `sort` >= #{newSort} and `sort` <= #{oldSort} and id != #{id}
         ]]>
     </update>
 
-    <update id="moveSortsForward" parameterType="com.course.server.dto.SortDto">
+    <update id="moveSortsForward" parameterType="com.course.business.dto.SortDto">
         <![CDATA[
         update course set `sort`= (`sort`-1) where `sort` <= #{newSort} and `sort` >= #{oldSort} and id != #{id}
         ]]>

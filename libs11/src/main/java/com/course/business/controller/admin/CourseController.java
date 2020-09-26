@@ -1,6 +1,7 @@
 package com.course.business.controller.admin;
 
 import com.course.business.dto.CourseDto;
+import com.course.business.dto.CoursePageDto;
 import com.course.business.dto.PageDto;
 import com.course.business.dto.ResponseDto;
 import com.course.business.service.CourseService;
@@ -25,7 +26,7 @@ public class CourseController {
      * list query
      */
     @PostMapping("/list")
-    public ResponseDto list(@RequestBody PageDto pageDto) {
+    public ResponseDto list(@RequestBody CoursePageDto pageDto) {
         ResponseDto responseDto = new ResponseDto();
         courseService.list(pageDto);
         responseDto.setContent(pageDto);

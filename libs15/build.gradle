@@ -1,0 +1,61 @@
+apply plugin: 'java-library'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.arenagod.gradle.MybatisGenerator'
+
+dependencyManagement {
+    imports {
+        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR7'
+    }
+}
+
+configurations {
+    mybatisGenerator
+}
+
+mybatisGenerator {
+    verbose = true
+    configFile = 'src/main/resources/generator/generatorConfig.xml'
+}
+
+
+dependencies {
+
+    // web
+    implementation "org.springframework.boot:spring-boot-starter-web"
+
+    // eureka
+    implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+
+    // data source
+    implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3"
+    implementation "mysql:mysql-connector-java"
+    implementation "com.alibaba:druid:1.1.23"
+
+    // redis
+    implementation "org.springframework.boot:spring-boot-starter-data-redis"
+
+    // mybatis-generator
+    mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.7'
+    mybatisGenerator 'mysql:mysql-connector-java:8.0.21'
+    mybatisGenerator 'tk.mybatis:mapper:3.3.2'
+
+    // page helper
+    implementation "com.github.pagehelper:pagehelper-spring-boot-starter:1.2.10"
+
+    // fastjson
+    implementation "com.alibaba:fastjson:1.2.73"
+
+    // kaptcha
+    implementation "com.github.penggle:kaptcha:2.3.2"
+
+    // common
+    implementation project(":libs13")
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

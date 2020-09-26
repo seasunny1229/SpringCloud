@@ -1,0 +1,28 @@
+apply plugin: 'java-library'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+    imports {
+        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR7'
+    }
+}
+
+dependencies {
+
+    // freemarker
+    implementation "org.freemarker:freemarker"
+
+    // dom4j
+    implementation "org.dom4j:dom4j:2.1.1"
+
+    // mysql connector java
+    implementation "mysql:mysql-connector-java"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

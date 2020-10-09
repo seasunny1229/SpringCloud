@@ -89,7 +89,7 @@ public class UserService {
         user.setPassword(null);
 
         // update user info
-        userMapper.updateByPrimaryKey(user);
+        userMapper.updateByPrimaryKeySelective(user);
     }
 
     /**

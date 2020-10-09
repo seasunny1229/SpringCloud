@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 @RestController
@@ -58,4 +60,56 @@ public class RoleController {
         roleService.delete(id);
         return responseDto;
     }
+
+    /**
+     * 保存资源
+     * @param roleDto
+     */
+    @PostMapping("/save-resource")
+    public ResponseDto saveResource(@RequestBody RoleDto roleDto) {
+        LOG.info("保存角色资源关联开始");
+        ResponseDto<RoleDto> responseDto = new ResponseDto<>();
+        roleService.saveResource(roleDto);
+        responseDto.setContent(roleDto);
+        return responseDto;
+    }
+
+    /**
+     * 加载已关联的资源
+     */
+    @GetMapping("/list-resource/{roleId}")
+    public ResponseDto listResource(@PathVariable String roleId) {
+        LOG.info("加载资源开始");
+        ResponseDto responseDto = new ResponseDto<>();
+        List<String> resourceIdList = roleService.listResource(roleId);
+        responseDto.setContent(resourceIdList);
+        return responseDto;
+    }
+
+    /**
+     * 保存用户
+     * @param roleDto
+     */
+    @PostMapping("/save-user")
+    public ResponseDto saveUser(@RequestBody RoleDto roleDto) {
+        LOG.info("保存角色用户关联开始");
+        ResponseDto<RoleDto> responseDto = new ResponseDto<>();
+        roleService.saveUser(roleDto);
+        responseDto.setContent(roleDto);
+        return responseDto;
+    }
+
+    /**
+     * 加载用户
+     * @param roleId
+     */
+    @GetMapping("/list-user/{roleId}")
+    public ResponseDto listUser(@PathVariable String roleId) {
+        LOG.info("加载用户开始");
+        ResponseDto responseDto = new ResponseDto<>();
+        List<String> userIdList = roleService.listUser(roleId);
+        responseDto.setContent(userIdList);
+        return responseDto;
+    }
+
 }

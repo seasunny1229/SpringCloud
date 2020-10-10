@@ -57,6 +57,11 @@ dependencies {
     // page helper
     implementation "com.github.pagehelper:pagehelper-spring-boot-starter:1.2.10"
 
+    // fastjson
+    implementation "com.alibaba:fastjson:1.2.73"
+
+    // kaptcha
+    implementation "com.github.penggle:kaptcha:2.3.2"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 

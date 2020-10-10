@@ -14,7 +14,6 @@ public class TestGatewayFilter implements GatewayFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        System.out.println("filter");
         return chain.filter(exchange);
     }
 

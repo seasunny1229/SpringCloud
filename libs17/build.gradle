@@ -11,8 +11,18 @@ dependencyManagement {
 
 dependencies {
 
+    // admin
+    implementation "de.codecentric:spring-boot-admin-starter-client:2.3.0"
+
+    // actuator
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+
     // eureka
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+
+    // sleuth, zipkin
+    implementation "org.springframework.cloud:spring-cloud-starter-sleuth"
+    implementation "org.springframework.cloud:spring-cloud-starter-zipkin"
 
     // gateway
     implementation "org.springframework.cloud:spring-cloud-starter-gateway"

@@ -104,7 +104,7 @@ public class MemberService {
             throw new BusinessException((BusinessExceptionCode.LOGIN_MEMBER_ERROR));
         }
         else {
-            if(member.getPassword().equals(memberDto.getPhoto())){
+            if(member.getPassword().equals(memberDto.getPassword())){
                 LoginMemberDto loginMemberDto = CopyUtil.copy(member, LoginMemberDto.class);
                 return loginMemberDto;
             }

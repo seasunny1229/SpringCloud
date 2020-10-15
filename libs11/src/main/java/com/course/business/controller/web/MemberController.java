@@ -13,7 +13,9 @@ import com.course.business.util.UuidUtil;
 import com.course.business.util.ValidatorUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -31,8 +33,8 @@ public class MemberController {
     @Resource
     private MemberService memberService;
 
-    @Resource(name = "redisTemplate")
-    private RedisTemplate redisTemplate;
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
     @Resource
     private SmsService smsService;

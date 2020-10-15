@@ -32,6 +32,12 @@ dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-sleuth"
     implementation "org.springframework.cloud:spring-cloud-starter-zipkin"
 
+    // OSS
+    implementation "com.aliyun.oss:aliyun-sdk-oss:3.8.0"
+
+    // VOD
+    implementation "com.aliyun:aliyun-java-sdk-vod:2.15.8"
+
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("/admin/courseContentFile")
+@RequestMapping("/admin/course-content-file")
 public class CourseContentFileController {
 
     private static final Logger LOG = LoggerFactory.getLogger(CourseContentFileController.class);
@@ -32,7 +32,7 @@ public class CourseContentFileController {
     /**
      * list query
      */
-    @GetMapping("/list/{course}")
+    @GetMapping("/list/{courseId}")
     public ResponseDto list(@PathVariable String courseId) {
         ResponseDto responseDto = new ResponseDto();
         List<CourseContentFileDto> fileDtoList = courseContentFileService.list(courseId);

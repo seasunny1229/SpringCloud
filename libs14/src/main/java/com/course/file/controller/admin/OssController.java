@@ -154,6 +154,8 @@ public class OssController {
         ResponseDto responseDto = new ResponseDto();
         FileDto fileDto = new FileDto();
         fileDto.setPath(ossDomain + path);
+        fileDto.setName(fileName);
+        fileDto.setSize(file.getBytes().length);
         responseDto.setContent(fileDto);
 
         return responseDto;

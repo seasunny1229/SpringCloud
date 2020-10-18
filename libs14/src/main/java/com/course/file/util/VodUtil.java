@@ -26,6 +26,9 @@ import java.io.InputStream;
 public class VodUtil {
     private static final String REGION_ID = "cn-shanghai";
 
+    private static final Long VOD_CATEGORY_ID = 1000204016L;
+    private static final String VOD_TEMPLATE_GROUP_ID = "eba00bc94de3819b6c65b6c0f3e4d1e3";
+
 
     public static DefaultAcsClient initVodClient(String accessKeyId, String accessKeySecret) throws ClientException {
 
@@ -49,8 +52,8 @@ public class VodUtil {
         request.setFileName(fileName);
         request.setTitle(fileName);
 
-        request.setCateId(1000115308L);
-        request.setTemplateGroupId("78fffb8c0c2426efd5baaaafed76fe36");
+        request.setCateId(VOD_CATEGORY_ID);
+        request.setTemplateGroupId(VOD_TEMPLATE_GROUP_ID);
 
         request.setReadTimeout(1000);
         request.setConnectTimeout(1000);

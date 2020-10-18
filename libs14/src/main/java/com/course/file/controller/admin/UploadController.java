@@ -186,7 +186,6 @@ public class UploadController {
     }
 
     @GetMapping("/check/{key}")
-
     public ResponseDto check(@PathVariable("key") String key) throws Exception{
 
         ResponseDto responseDto = new ResponseDto();

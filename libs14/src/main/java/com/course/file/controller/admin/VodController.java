@@ -83,7 +83,7 @@ public class VodController {
         String dir = useEnum.name().toLowerCase();
 
         // file relative path
-        // course\6sfSqfOwzmik4A4icMYuUe.mp4
+        // course/6sfSqfOwzmik4A4icMYuUe.mp4
         String path = new StringBuffer(dir)
                 .append("/")
                 .append(key)

@@ -56,6 +56,7 @@ public class MemberCourseService {
     private void insert(MemberCourse memberCourse) {
         Date now = new Date();
         memberCourse.setId(UuidUtil.getShortUuid());
+        memberCourse.setAt(now);
         memberCourseMapper.insert(memberCourse);
     }
 

@@ -54,7 +54,7 @@ public class ResourceService {
      * insert
      */
     private void insert(Resource resource) {
-        resource.setId(UuidUtil.getShortUuid());
+        //resource.setId(UuidUtil.getShortUuid());
         resourceMapper.insert(resource);
     }
 

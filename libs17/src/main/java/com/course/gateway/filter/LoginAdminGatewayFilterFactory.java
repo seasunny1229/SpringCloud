@@ -18,6 +18,6 @@ public class LoginAdminGatewayFilterFactory extends AbstractGatewayFilterFactory
 
     @Override
     public GatewayFilter apply(Object config) {
-        return testGatewayFilter;
+        return loginAdminGatewayFilter;
     }
 }

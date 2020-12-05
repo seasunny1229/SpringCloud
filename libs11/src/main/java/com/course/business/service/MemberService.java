@@ -21,6 +21,13 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+/**
+ *
+ * 操作数据库
+ *
+ * 抛出异常 BusinessException
+ *
+ */
 @Service
 public class MemberService {
 

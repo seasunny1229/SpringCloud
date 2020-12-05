@@ -1,5 +1,12 @@
 package com.course.business.exception;
 
+/**
+ *
+ * business exception
+ *
+ * 返回用户失败信息
+ *
+ */
 public class BusinessException extends RuntimeException{
 
     private BusinessExceptionCode code;

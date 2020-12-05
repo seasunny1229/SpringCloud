@@ -1,5 +1,17 @@
 package com.course.business.dto;
 
+/**
+ *
+ * 返回前端的实体类 REST API json格式
+ *
+ * boolean: success
+ * string: code
+ * string: message
+ * object: content
+ *
+ *
+ * @param <T>
+ */
 public class ResponseDto<T> {
 
     // business success flag

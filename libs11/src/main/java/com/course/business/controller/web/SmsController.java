@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+/**
+ *
+ * 发送验证码
+ *
+ */
 @RestController("webSmsController")
 @RequestMapping("/web/sms")
 public class SmsController {
@@ -22,6 +27,13 @@ public class SmsController {
     @Resource
     private SmsService smsService;
 
+    /**
+     *
+     * 发送验证码
+     *
+     * @param smsDto
+     * @return
+     */
     @RequestMapping(value = "/send", method = RequestMethod.POST)
     public ResponseDto send(@RequestBody SmsDto smsDto) {
         LOG.info("发送短信请求开始: {}", smsDto);

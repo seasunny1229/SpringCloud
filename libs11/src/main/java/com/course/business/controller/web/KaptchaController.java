@@ -18,6 +18,11 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.util.concurrent.TimeUnit;
 
+/**
+ *
+ * 给前端发送验证码图片
+ *
+ */
 @RestController
 @RequestMapping("/web/kaptcha")
 public class KaptchaController {
@@ -29,6 +34,24 @@ public class KaptchaController {
     @Autowired
     public StringRedisTemplate redisTemplate;
 
+    /**
+     *
+     * 生成验证码
+     *
+     * redis缓存
+     * imageCodeToken --> imageCode
+     *
+     * 发送验证码到前端
+     *
+     *
+     * @param imageCodeToken 前端生成的imageCodeToken
+     *
+     * @param request  httpServletRequest (servlet参数)
+     *
+     * @param httpServletResponse httpServletResponse (servlet参数)
+     *
+     * @throws Exception
+     */
     @GetMapping("/image-code/{imageCodeToken}")
     public void imageCode(@PathVariable(value = "imageCodeToken") String imageCodeToken, HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception{
         ByteArrayOutputStream jpegOutputStream = new ByteArrayOutputStream();

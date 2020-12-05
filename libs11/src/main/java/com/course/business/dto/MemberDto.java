@@ -4,6 +4,17 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 
+
+/**
+ *
+ * 用户注册
+ *
+ * POST请求，HTTP消息实体部分
+ *
+ * 输入参数：手机号码，密码，昵称，头像url，短信验证码
+ *
+ *
+ */
 public class MemberDto {
 
     /**

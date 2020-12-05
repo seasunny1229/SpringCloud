@@ -4,6 +4,15 @@ import com.course.business.exception.ValidatorException;
 
 import org.springframework.util.StringUtils;
 
+/**
+ *
+ * 输入校验
+ *
+ * 输入是否为空
+ * 输入长度限制
+ *
+ */
+
 public class ValidatorUtil {
 
 

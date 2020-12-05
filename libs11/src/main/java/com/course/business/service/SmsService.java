@@ -80,6 +80,19 @@ public class SmsService {
     /**
      * 发送短信验证码
      * 同手机号同操作1分钟内不能重复发送短信
+     *
+     * 查询验证码是否存在
+     * 条件：手机号码，使用类型，1分钟以内
+     *
+     * 查询到 --> 抛出异常
+     *
+     * 未查询到
+     * 生成6位验证码
+     * 存到数据库
+     *
+     * 调用第三方短信验证码服务发送给用户
+     *
+     *
      * @param smsDto
      */
     public void sendCode(SmsDto smsDto) {
@@ -118,6 +131,24 @@ public class SmsService {
     /**
      * 验证码5分钟内有效，且操作类型要一致
      * @param smsDto
+     *
+     *
+     * 查询数据库
+     * 查询条件：手机号码，使用类型，过去5分钟内的
+     *
+     * 1. 查询到验证码
+     *
+     * 验证码正确：
+     * 设置验证码状态为已经使用过
+     * 更新数据库
+     *
+     *
+     * 验证码不正确：抛出异常，返回用户失败信息
+     *
+     *
+     * 2. 没有查询到验证码
+     * 抛出异常，返回用户失败信息
+     *
      */
     public void validCode(SmsDto smsDto) {
         SmsExample example = new SmsExample();

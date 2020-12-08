@@ -15,28 +15,21 @@ dependencies {
     // web
     implementation "org.springframework.boot:spring-boot-starter-web"
 
-    // admin
-    implementation "de.codecentric:spring-boot-admin-starter-client:2.3.0"
-
-    // actuator
-    implementation "org.springframework.boot:spring-boot-starter-actuator"
-
     // eureka
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
-
-    // swagger
-    implementation "io.springfox:springfox-swagger2:2.7.0"
-    implementation "io.springfox:springfox-swagger-ui:2.7.0"
-
-    // sleuth, zipkin
-    implementation "org.springframework.cloud:spring-cloud-starter-sleuth"
-    implementation "org.springframework.cloud:spring-cloud-starter-zipkin"
 
     // OSS
     implementation "com.aliyun.oss:aliyun-sdk-oss:3.8.0"
 
     // VOD
     implementation "com.aliyun:aliyun-java-sdk-vod:2.15.8"
+
+    // fastjson
+    implementation "com.alibaba:fastjson:1.2.73"
+
+
+    implementation "mysql:mysql-connector-java"
+    implementation "commons-dbcp:commons-dbcp:1.4"
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])

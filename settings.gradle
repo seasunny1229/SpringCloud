@@ -1,2 +1,2 @@
-include ':app', ':libs1', ':libs2', ':libs3', ':libs4', ':libs5', ':libs6', ':libs7', ':libs-test', ':libs11', ':libs12', ':libs13', ':libs14', ':libs15', ':libs21', ':libs17', ':libs31'
+include ':app', ':libs1', ':libs2', ':libs3', ':libs4', ':libs5', ':libs6', ':libs7', ':libs-test', ':libs11', ':libs12', ':libs13', ':libs14', ':libs15', ':libs21', ':libs17', ':libs31', ':libs41'
 rootProject.name='SpringCloud'

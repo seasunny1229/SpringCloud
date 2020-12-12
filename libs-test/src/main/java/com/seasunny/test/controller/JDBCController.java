@@ -3,9 +3,11 @@ package com.seasunny.test.controller;
 import com.seasunny.test.Result;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,6 +48,7 @@ public class JDBCController {
 
         conn= DriverManager.getConnection(URL,USERNAME,PASSWORD);
         statement=conn.createStatement();
+        conn.setAutoCommit(false);
 
         long startTime = System.currentTimeMillis();
         statement.execute(sql);
@@ -75,6 +78,7 @@ public class JDBCController {
             result.setData(dataList);
         }
 
+        conn.commit();
         long duration = System.currentTimeMillis() - startTime;
 
         result.setDuration(duration);

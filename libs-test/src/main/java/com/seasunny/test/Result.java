@@ -34,4 +34,13 @@ public class Result {
     public void setData(List<String[]> data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "Result{" +
+                "duration=" + duration +
+                ", fields=" + fields +
+                ", data=" + data +
+                '}';
+    }
 }

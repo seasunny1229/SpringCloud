@@ -24,13 +24,18 @@ import java.util.List;
 public class JDBCController {
 
     private static final String DRIVER="com.mysql.cj.jdbc.Driver";
-    private static final String URL="jdbc:mysql://47.103.192.187:3306/course";
+    private static final String URL="jdbc:mysql://47.103.192.187:3306/";
     private static final String USERNAME="root";
     private static final String PASSWORD="123456";
 
 
     @PostMapping("/get")
-    public Result get(@RequestBody String sql) throws Exception{
+    public Result get(@RequestBody String body) throws Exception{
+
+        String[] splits = body.split("/");
+
+        String database = splits[0];
+        String sql = splits[1];
 
 
         Connection conn;
@@ -46,7 +51,7 @@ public class JDBCController {
             e.printStackTrace() ;
         }
 
-        conn= DriverManager.getConnection(URL,USERNAME,PASSWORD);
+        conn= DriverManager.getConnection(URL + database,USERNAME,PASSWORD);
         statement=conn.createStatement();
         conn.setAutoCommit(false);
 

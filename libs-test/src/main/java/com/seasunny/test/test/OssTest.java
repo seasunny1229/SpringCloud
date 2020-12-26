@@ -2,6 +2,7 @@ package com.seasunny.test.test;
 
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
+import com.aliyun.oss.model.AppendObjectRequest;
 import com.aliyun.oss.model.Bucket;
 import com.aliyun.oss.model.ListBucketsRequest;
 import com.aliyun.oss.model.OSSObjectSummary;
@@ -58,6 +59,8 @@ public class OssTest {
          */
         System.out.println("Uploading a new object to OSS from a file\n");
         ossClient.putObject(new PutObjectRequest(bucketName, "training1/2.txt", createSampleFile()));
+
+        ossClient.shutdown();
 
     }
 

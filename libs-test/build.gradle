@@ -28,9 +28,12 @@ dependencies {
     implementation "com.alibaba:fastjson:1.2.73"
 
 
+    // mysql
     implementation "mysql:mysql-connector-java"
     implementation "commons-dbcp:commons-dbcp:1.4"
 
+    // redis
+    implementation "org.springframework.boot:spring-boot-starter-data-redis"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

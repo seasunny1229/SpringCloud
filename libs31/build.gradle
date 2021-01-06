@@ -28,6 +28,16 @@ dependencies {
     // jode-time
     implementation "joda-time:joda-time:2.9.1"
 
+    // guava
+    implementation "com.google.guava:guava"
+
+    // swagger
+    implementation "io.springfox:springfox-swagger2:2.7.0"
+    implementation "io.springfox:springfox-swagger-ui:2.7.0"
+
+    // redis
+    implementation "org.springframework.boot:spring-boot-starter-data-redis"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 

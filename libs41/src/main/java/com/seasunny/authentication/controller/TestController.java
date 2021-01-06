@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("/test")
 public class TestController {
@@ -44,6 +46,11 @@ public class TestController {
             return "null";
         }
         return value;
+    }
+
+    @GetMapping("/net")
+    public String net(HttpServletRequest httpServletRequest){
+        return httpServletRequest.getLocalAddr() + ":" +  httpServletRequest.getLocalPort();
     }
 
 }

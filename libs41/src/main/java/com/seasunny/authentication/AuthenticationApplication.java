@@ -17,7 +17,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("")
+@MapperScan("com.seasunny.authentication.mapper")
 public class AuthenticationApplication {
 
     public static void main(String... args){

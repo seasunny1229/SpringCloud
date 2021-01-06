@@ -44,4 +44,20 @@ public class OrderController extends BaseController {
 
         return CommonReturnType.create(null);
     }
+
+
+    // 不用登录，直接下单
+    @RequestMapping(value = "/testorder",method = {RequestMethod.POST},consumes={CONTENT_TYPE_FORMED})
+    @ResponseBody
+    public CommonReturnType createOrderWithoutLogin(@RequestParam(name="userId")Integer userId,
+                                                    @RequestParam(name="itemId")Integer itemId,
+                                                    @RequestParam(name="amount")Integer amount,
+                                                    @RequestParam(name="promoId",required = false)Integer promoId) throws BusinessException {
+        OrderModel orderModel = orderService.createOrder(userId,itemId,promoId,amount);
+        return CommonReturnType.create(null);
+    }
+
+
+
+
 }

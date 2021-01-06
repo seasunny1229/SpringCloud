@@ -35,6 +35,16 @@ dependencies {
     // redis
     implementation "org.springframework.boot:spring-boot-starter-data-redis"
 
+    // feign
+    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
+
+    // guava
+    implementation "com.google.guava:guava"
+
+    // swagger
+    implementation "io.springfox:springfox-swagger2:2.7.0"
+    implementation "io.springfox:springfox-swagger-ui:2.7.0"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 

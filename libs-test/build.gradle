@@ -45,6 +45,10 @@ dependencies {
     implementation "io.springfox:springfox-swagger2:2.7.0"
     implementation "io.springfox:springfox-swagger-ui:2.7.0"
 
+    // rocket mp
+    //implementation "org.apache.rocketmq:rocketmq-client:4.8.0"
+    implementation group: 'org.apache.rocketmq', name: 'rocketmq-spring-boot-starter', version: '2.0.4'
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 

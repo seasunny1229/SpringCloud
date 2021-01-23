@@ -38,6 +38,9 @@ dependencies {
     // redis
     implementation "org.springframework.boot:spring-boot-starter-data-redis"
 
+    // rocket mp
+    implementation group: 'org.apache.rocketmq', name: 'rocketmq-spring-boot-starter', version: '2.0.4'
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 

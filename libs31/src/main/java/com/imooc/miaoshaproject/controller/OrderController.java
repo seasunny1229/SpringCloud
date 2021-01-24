@@ -10,20 +10,28 @@ import com.imooc.miaoshaproject.response.CommonReturnType;
 import com.imooc.miaoshaproject.service.PromoService;
 import com.imooc.miaoshaproject.service.model.OrderModel;
 import com.imooc.miaoshaproject.service.model.UserModel;
+import com.imooc.miaoshaproject.util.CodeUtil;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.image.RenderedImage;
+import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by hzllb on 2018/11/18.
@@ -65,6 +73,35 @@ public class OrderController extends BaseController {
 
         // init rate limiter
         orderCreateRateLimiter = RateLimiter.create(300);
+    }
+
+    //生成验证码
+    @RequestMapping(value = "/generateverifycode",method = {RequestMethod.GET,RequestMethod.POST})
+    @ResponseBody
+    public void generateverifycode(HttpServletResponse response) throws BusinessException, IOException {
+
+        // get token from http request parameter
+        String token = httpServletRequest.getParameterMap().get("token")[0];
+        if(StringUtils.isEmpty(token)){
+            throw new BusinessException(EmBusinessError.USER_NOT_LOGIN,"用户还未登陆，不能生成验证码");
+        }
+
+        // get user model from redis by token
+        UserModel userModel = (UserModel) redisTemplate.opsForValue().get(token);
+        if(userModel == null){
+            throw new BusinessException(EmBusinessError.USER_NOT_LOGIN,"用户还未登陆，不能生成验证码");
+        }
+
+        // generate code
+        Map<String,Object> map = CodeUtil.generateCodeAndPic();
+
+        // redis save
+        redisTemplate.opsForValue().set("verify_code_"+userModel.getId(),map.get("code"));
+        redisTemplate.expire("verify_code_"+userModel.getId(),10, TimeUnit.MINUTES);
+
+        // 验证码
+        ImageIO.write((RenderedImage) map.get("codePic"), "jpeg", response.getOutputStream());
+
     }
 
 

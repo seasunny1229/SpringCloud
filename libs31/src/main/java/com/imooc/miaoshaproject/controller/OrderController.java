@@ -154,10 +154,12 @@ public class OrderController extends BaseController {
                                         @RequestParam(name="promoId",required = false)Integer promoId,
                                         @RequestParam(name="promoToken",required = false)String promoToken) throws BusinessException {
 
+        // 限流， 令牌桶算法
         if(!orderCreateRateLimiter.tryAcquire()){
             throw new BusinessException(EmBusinessError.RATELIMIT);
         }
 
+        // 用户校验
         String token = httpServletRequest.getParameterMap().get("token")[0];
         if(StringUtils.isEmpty(token)){
             throw new BusinessException(EmBusinessError.USER_NOT_LOGIN,"用户还未登陆，不能下单");
@@ -167,6 +169,7 @@ public class OrderController extends BaseController {
         if(userModel == null){
             throw new BusinessException(EmBusinessError.USER_NOT_LOGIN,"用户还未登陆，不能下单");
         }
+
         //校验秒杀令牌是否正确
         if(promoId != null){
             String inRedisPromoToken = (String) redisTemplate.opsForValue().get("promo_token_"+promoId+"_userid_"+userModel.getId()+"_itemid_"+itemId);
@@ -184,6 +187,7 @@ public class OrderController extends BaseController {
 
             @Override
             public Object call() throws Exception {
+
                 //加入库存流水init状态
                 String stockLogId = itemService.initStockLog(itemId,amount);
 
@@ -206,8 +210,6 @@ public class OrderController extends BaseController {
 
         return CommonReturnType.create(null);
     }
-
-
 
 
 

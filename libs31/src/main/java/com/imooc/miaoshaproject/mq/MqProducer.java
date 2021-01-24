@@ -141,11 +141,14 @@ public class MqProducer {
 
     //事务型同步库存扣减消息
     public boolean transactionAsyncReduceStock(Integer userId,Integer itemId,Integer promoId,Integer amount,String stockLogId){
+
+        // message body map
         Map<String,Object> bodyMap = new HashMap<>();
         bodyMap.put("itemId",itemId);
         bodyMap.put("amount",amount);
         bodyMap.put("stockLogId",stockLogId);
 
+        // args map for second confirmation
         Map<String,Object> argsMap = new HashMap<>();
         argsMap.put("itemId",itemId);
         argsMap.put("amount",amount);
@@ -153,8 +156,11 @@ public class MqProducer {
         argsMap.put("promoId",promoId);
         argsMap.put("stockLogId",stockLogId);
 
+        // message
         Message message = new Message(topicName,"increase",
                 JSON.toJSON(bodyMap).toString().getBytes(Charset.forName("UTF-8")));
+
+        // send message
         TransactionSendResult sendResult = null;
         try {
 
@@ -163,9 +169,12 @@ public class MqProducer {
             e.printStackTrace();
             return false;
         }
+
+        // get send result
         if(sendResult.getLocalTransactionState() == LocalTransactionState.ROLLBACK_MESSAGE){
             return false;
-        }else if(sendResult.getLocalTransactionState() == LocalTransactionState.COMMIT_MESSAGE){
+        }
+        else if(sendResult.getLocalTransactionState() == LocalTransactionState.COMMIT_MESSAGE){
             return true;
         }else{
             return false;

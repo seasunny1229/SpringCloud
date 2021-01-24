@@ -1,5 +1,15 @@
 package com.imooc.miaoshaproject.dataobject;
 
+
+/**
+ *
+ * stock log status
+ * 1: unknown
+ * 2: success
+ * 3: fail
+ *
+ *
+ */
 public class StockLogDO {
     /**
      *
